@@ -34,6 +34,7 @@ public class HomePage {
 	@Then("Validate the page tile")
 	public void validate_the_page_tile() {
 	   System.out.println(driver.getTitle());
+	System.out.println(driver.getTitle());	//This needs to removed duplicate
 	}
 
 	@Then("Validate the product name")
