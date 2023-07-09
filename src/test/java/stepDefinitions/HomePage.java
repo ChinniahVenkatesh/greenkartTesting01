@@ -117,7 +117,7 @@ public class HomePage {
 		hp.searchBox().clear();
 		ExcelDataTest ex = new ExcelDataTest();
 		ex.excelIntegration();
-				
+		
 	}
 
 	
