@@ -6,6 +6,7 @@ package stepDefinitions;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.Duration;
 
 import org.apache.commons.io.FileUtils;
@@ -20,19 +21,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.google.common.io.Files;
 
+import commonUtils.browserSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Test01 {
 	
-	WebDriver driver;
+	public WebDriver driver;
 	public  Logger log = LogManager.getLogger(Test01.class);
 	
 	@Given("Access the Espncricinfo url {string}")
-	public void access_the_espncricinfo_url(String string) {
-	   driver  = new ChromeDriver();
-	   driver.get(string);
+	public void access_the_espncricinfo_url(String string) throws MalformedURLException {
+	  browserSetup bs = new browserSetup();
+	  driver = bs.seleniumgridrun();
+	  driver.get(string);
 	   
 	}
 

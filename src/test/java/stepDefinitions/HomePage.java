@@ -1,9 +1,11 @@
 package stepDefinitions;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -17,12 +19,12 @@ import pageObjects.homepageObject;
 
 public class HomePage {
 	
-	public static ChromeDriver driver; //driver = null 
+	public static WebDriver driver; //driver = null 
 	
 	@Given("Access the url {string}")
-	public void access_the_url(String url) {
+	public void access_the_url(String url) throws MalformedURLException {
 	   browserSetup bs = new browserSetup();
-	  driver = bs.chromeSetup();
+	  driver = bs.seleniumgridrun();
 	  driver.get(url);
 	}
 
